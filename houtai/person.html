@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/person.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="top">
+            <div class="topL">
+                <img src="./img/photo.png" alt="">
+            </div>
+            <div class="topR">
+                <div class="line1"><b>身份证查询</b><span>免费</span><em>支持HTTPS</em></div>
+                <div class="line2">身份归属地信息查询</div>
+                <div class="line3">
+                    <div class="line3L">
+                        <p>数据ID：<span>38</span></p>
+                        <p>接口状态：<em>正常</em></p>
+                        <p>连接应用数：16339</p>
+                    </div>
+                    <div class="line3R">
+                        <p>免费</p>
+                    </div>
+                </div>
+                <div class="line4">
+                    <a href="">申请数据</a>
+                    <a href="">查看演示</a>
+                </div>
+            </div>
+        </div>
+         <div class="notice">
+        <div class="notice-tit" id="notice-tit">
+            <ul>
+                <li class="select"><a href="#">API</li>
+                <li><a href="#">请求参数</a></li>
+                <li><a href="#">返回参数</a></li>
+                <li><a href="#">示例</a></li>
+            </ul>
+        </div>
+        <div class="notice-con" id="notice-con">
+            <div style="display: block">我是内容1</div>
+            <div style="display: none">我是内容2</div>
+            <div style="display: none">我是内容3</div>
+            <div style="display: none">我是内容4</div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+     //获取id封装成一个函数$()方便调用
+    function $(id){
+    //如果传入的参数类型为字符串则获取当前ID元素，否则返回id
+        return typeof id==="string"?document.getElementById(id):id;
+    }
+     //window.onload表示当文档加载完毕时执行函数
+     window.onload=function(){
+         //获取#notice-tit下面的全部li元素
+         var titles=$('notice-tit').getElementsByTagName('li');
+        //获取#notice-con下面的全部div元素
+        var divs=$('notice-con').getElementsByTagName('div');
+        //遍历所有li标签，给每个li加上id和值，并且绑定事件
+         var timer=null;
+        for(var i=0;i<titles.length;i++){
+            //给每个li加上id和值
+           titles[i].id=i;
+             //给每个li绑定事件
+          titles[i].onclick=function(){
+             //this指向当前悬浮的对象并存进变量that中,用that做一个this的引用
+             var that=this;
+             this.style.borderTop="1px solid #7c7c7c";
+             if(timer){
+                //清除定时器
+               clearTimeout(timer);
+                //初始化变量的值
+                timer=null;
+            }
+            //设置定时器，执行函数的时间延迟了500毫秒
+            timer=setTimeout(function(){
+            //悬浮后首先应该初始化每个li和div上的类和display
+                for(var j=0;j<titles.length;j++){
+                     titles[j].className="";
+                   divs[j].style.display="none";
+               }
+           //给当前悬浮元素添加属性
+            //这个地方不能用this.id了，因为this指向了window这个对象了,
+                titles[that.id].className="select";
+                divs[that.id].style.display="block";},10);
+            }
+         }
+     }
+</script>

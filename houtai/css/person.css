@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.top {
+    width: 800px;
+    height: 300px;
+    padding: 50px 50px 0 50px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    display: flex;
+}
+
+.top .topL {
+    width: 240px;
+    height: 220px;
+    border: 1px solid #dfdfdf;
+}
+
+.top .topL img {
+    margin: 40px 30px;
+}
+
+.top .topR {
+    flex: 1;
+    width: 100%;
+    height: 220px;
+    margin-left: 80px;
+}
+
+.top .topR .line1 {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.top .topR .line1 b {}
+
+.top .topR .line1 span {
+    border: 1px solid green;
+    color: green;
+    margin-left: 10px;
+    padding: 0 5px;
+}
+
+.top .topR .line1 em {
+    border: 1px solid red;
+    color: red;
+    font-style: normal;
+    margin-left: 10px;
+    padding: 0 5px;
+}
+
+.top .topR .line2 {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #9f9f9f;
+}
+
+.top .topR .line3 {
+    display: flex;
+    height: 80px;
+}
+
+.top .topR .line3 .line3L {
+    width: 200px;
+    height: 80px;
+    color: #797979;
+}
+
+.top .topR .line3 .line3L p {
+    line-height: 30px;
+}
+
+.top .topR .line3 .line3L p span {
+    color: #fd8bb5;
+}
+
+.top .topR .line3 .line3L p em {
+    color: green;
+    font-style: normal;
+}
+
+.top .topR .line3 .line3R {
+    flex: 1;
+    border-left: 1px solid #ccc;
+}
+
+.top .topR .line3 .line3R p {
+    color: green;
+    line-height: 80px;
+    padding-left: 60px;
+}
+
+.top .topR .line4 {
+    width: 100%;
+    height: 60px;
+    margin-top: 40px;
+}
+
+.top .topR .line4 a {
+    width: 115px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.top .topR .line4 a:nth-of-type(1) {
+    background: #29abe2;
+    color: #fff;
+}
+
+.top .topR .line4 a:nth-of-type(2) {
+    background: #fff;
+    color: #797979;
+    border: 1px solid #797979;
+}
+
+.notice {
+    width: 800px;
+    height: 300px;
+    padding: 50px 50px 0 50px;
+    margin: 0 auto;
+    color:#797979;
+    border: 1px solid #7c7c7c;
+    overflow: hidden;
+}
+
+.notice-tit {
+    height: 300px;
+    position: relative;
+}
+
+.notice-tit ul {
+    position: absolute;
+    width: 800px;
+    left: -1px;
+}
+
+.notice-tit ul li {
+    float: left;
+    width: 100px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-bottom: 1px solid #7c7c7c;
+    padding: 0 1px;
+}
+
+.notice-tit ul a {
+    text-decoration: none;
+    display: block;
+}
+
+.notice-tit ul .select {
+    background-color: white;
+    border-right: 1px solid #7c7c7c;
+    border-left: 1px solid #7c7c7c;
+    border-bottom: 1px solid white;
+    padding: 0;
+}
