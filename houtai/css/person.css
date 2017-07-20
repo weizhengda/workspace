@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+}
 ul li {
     list-style: none;
 }
@@ -18,7 +21,6 @@ ul li {
     height: 300px;
     padding: 50px 50px 0 50px;
     margin: 0 auto;
-    border: 1px solid #ccc;
     display: flex;
 }
 
@@ -133,47 +135,97 @@ ul li {
     color: #797979;
     border: 1px solid #797979;
 }
-
-.notice {
-    width: 800px;
-    height: 300px;
-    padding: 50px 50px 0 50px;
-    margin: 0 auto;
-    color:#797979;
-    border: 1px solid #7c7c7c;
-    overflow: hidden;
+	
+.tab1{
+	width: 900px;
+	height: 407px;
+    margin:0 auto;
+	margin-bottom:12px;
 }
-
-.notice-tit {
-    height: 300px;
-    position: relative;
+.tab1 #tabs1{
+	width:100%;
+	height:32px;
+	line-height: 30px;
+	float: left;
+	margin-top:4px;
 }
-
-.notice-tit ul {
-    position: absolute;
-    width: 800px;
-    left: -1px;
+.tab1 #tabs1 li{
+	height:29px;
+	float: left;
 }
-
-.notice-tit ul li {
-    float: left;
-    width: 100px;
-    height: 26px;
-    line-height: 26px;
-    text-align: center;
-    border-bottom: 1px solid #7c7c7c;
-    padding: 0 1px;
+.tab1 #tabs1 a{
+	width:56px;
+    padding:0 50px;
+	display: block;
+	float: left;
+	height: 28px;
+	font-size: 14px;
+	color: #999;
+	line-height: 28px;
+	text-align: center;
+	/*background: #F6F6F6;*/
+	margin-right: 1px;
+	border-bottom: 1px solid #ccc;
 }
-
-.notice-tit ul a {
-    text-decoration: none;
-    display: block;
+.tab1 #tabs1 li h3{
+	width:56px;
+	display: block;
+	float: left;
+	height: 28px;
+	font-size: 14px;
+	color: #999;
+	line-height: 28px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
 }
-
-.notice-tit ul .select {
-    background-color: white;
-    border-right: 1px solid #7c7c7c;
-    border-left: 1px solid #7c7c7c;
-    border-bottom: 1px solid white;
-    padding: 0;
+.tab1 .tabresult{
+	width:228px;
+	height:371px;
+	float: left;
+}
+.tab1 .tabslider{
+	width:228px;
+	height:371px;
+}
+.tab1 .tabresult ul li{
+	width:116px;
+	height:60px;
+	padding:16px 12px 16px 100px;
+	position: relative;
+}
+.tab1 .tabresult ul li .img{
+	width: 80px;
+	height: 60px;
+	overflow: hidden;
+	position: absolute;
+	left: 12px;
+	top: 16px;
+}
+.tab1 .tabresult ul li .img img{
+	width: 80px;
+	height: 60px;
+}
+ .tabresult ul li .title{
+	height: 36px;
+	overflow: hidden;
+}
+.tab1 .tabresult ul li .money{
+	color: #FF6600;
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 8px;
+}
+.tab1 .tabresult .item {
+		display: none;
+}
+			
+.tab1 .tabresult .show {
+		display: block;
+	}
+.tab1 #tabs1 .current a {
+	background: #fff;
+	color: #FF6600;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-bottom: none;
 }

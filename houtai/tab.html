@@ -1,124 +1,147 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>菜单栏3</title>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-size: 12px;
-        }
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	a{
+		text-decoration: none;
+	}
+	ul{
+		list-style: none;
+	}
+.c{
+	width: 230px;
+	height: 407px;
+	float:left;
+	border: 1px solid #ccc;
+	margin-bottom:12px;
+}
+.c #tabs1{
+	width:230px;
+	height:32px;
+	line-height: 30px;
+	float: left;
+	margin-top:4px;
+}
+.c #tabs1 li{
+	height:29px;
+	float: left;
+}
+.c #tabs1 a{
+	width:56px;
+	display: block;
+	float: left;
+	height: 28px;
+	font-size: 14px;
+	color: #999;
+	line-height: 28px;
+	text-align: center;
+	/*background: #F6F6F6;*/
+	margin-right: 1px;
+	border-bottom: 1px solid #ccc;
+}
+.c #tabs1 li h3{
+	width:56px;
+	display: block;
+	float: left;
+	height: 28px;
+	font-size: 14px;
+	color: #999;
+	line-height: 28px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+.c .tabresult{
+	width:228px;
+	height:371px;
+	float: left;
+}
+.c .tabslider{
+	width:228px;
+	height:371px;
+}
+.c .tabresult ul li{
+	width:116px;
+	height:60px;
+	padding:16px 12px 16px 100px;
+	position: relative;
+}
+.c .tabresult ul li .img{
+	width: 80px;
+	height: 60px;
+	overflow: hidden;
+	position: absolute;
+	left: 12px;
+	top: 16px;
+}
+.c .tabresult ul li .img img{
+	width: 80px;
+	height: 60px;
+}
+ .tabresult ul li .title{
+	height: 36px;
+	overflow: hidden;
+}
+.c .tabresult ul li .money{
+	color: #FF6600;
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 8px;
+}
+.c .tabresult .item {
+		display: none;
+}
+			
+.c .tabresult .show {
+		display: block;
+	}
+.c #tabs1 .current a {
+	background: #fff;
+	color: #FF6600;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
 
-        .notice {
-            width: 298px;
-            height: 98px;
-            margin: 10px;
-            border: 1px solid #7c7c7c;
-            overflow: hidden;
-        }
-
-        .notice-tit {
-            height: 27px;
-            background-color: #eaeaea;
-            position: relative;
-        }
-
-        .notice-tit ul {
-            position: absolute;
-            width: 300px;
-            left: -1px;
-        }
-
-        .notice-tit ul li {
-            float: left;
-            width: 58px;
-            height: 26px;
-            line-height: 26px;
-            text-align: center;
-            border-bottom: 1px solid #7c7c7c;
-            padding: 0 1px;
-        }
-
-        .notice-tit ul a {
-            text-decoration: none;
-            display: block;
-        }
-
-        .notice-tit ul .select {
-            background-color: white;
-            border-right: 1px solid #7c7c7c;
-            border-left: 1px solid #7c7c7c;
-            border-bottom: 1px solid white;
-            padding: 0;
-        }
-    </style>
-</head>
-
+	</style>
+	
+	</head>
 <body>
-    <div class="notice">
-        <div class="notice-tit" id="notice-tit">
-            <ul>
-                <li class="select"><a href="#">公告</a></li>
-                <li><a href="#">规则</a></li>
-                <li><a href="#">论坛</a></li>
-                <li><a href="#">安全</a></li>
-                <li><a href="#">公益</a></li>
-            </ul>
-        </div>
-        <div class="notice-con" id="notice-con">
-            <div style="display: block">我是内容1</div>
-            <div style="display: none">我是内容2</div>
-            <div style="display: none">我是内容3</div>
-            <div style="display: none">我是内容4</div>
-            <div style="display: none">我是内容5</div>
-        </div>
-    </div>
-    <html>
+	<div class="c">
+				<ul id="tabs1">	
+					<li class="current noborder"><a href="#" title="tab10" style='border-left:none'>手表</a>
+					<li><a href="#" title="tab11">笔记本</a>
+					<li><a href="#" title="tab12">奶粉</a>								
+				</ul>
+				<div class="tabresult">
+				<div id="tab10" class="item show">
+				 	1
+				 
+				  </div>
+				  <div id="tab11" class="item">
+				 	2
+				  </div>
+				  
+				  <div id="tab12" class="item">
+				 	3
+				  </div>
+				  </div>
+				  </div>
+</body>
+<ml>
 
-    <script>
-     //获取id封装成一个函数$()方便调用
-    function $(id){
-    //如果传入的参数类型为字符串则获取当前ID元素，否则返回id
-        return typeof id==="string"?document.getElementById(id):id;
-    }
-     //window.onload表示当文档加载完毕时执行函数
-     window.onload=function(){
-         //获取#notice-tit下面的全部li元素
-         var titles=$('notice-tit').getElementsByTagName('li');
-        //获取#notice-con下面的全部div元素
-        var divs=$('notice-con').getElementsByTagName('div');
-        //遍历所有li标签，给每个li加上id和值，并且绑定事件
-         var timer=null;
-        for(var i=0;i<titles.length;i++){
-            //给每个li加上id和值
-           titles[i].id=i;
-             //给每个li绑定事件
-          titles[i].onmouseover=function(){
-             //this指向当前悬浮的对象并存进变量that中,用that做一个this的引用
-            var that=this;
-             //当存在定时器的时候我们需要把它清除,如果悬浮的时间少于500毫秒，
-             //则不会执行后面的函数，一般定时器前面都需要有个清除的步骤。
-             if(timer){
-                //清除定时器
-               clearTimeout(timer);
-                //初始化变量的值
-                timer=null;
-            }
-            //设置定时器，执行函数的时间延迟了500毫秒
-            timer=setTimeout(function(){
-            //悬浮后首先应该初始化每个li和div上的类和display
-                for(var j=0;j<titles.length;j++){
-                     titles[j].className="";
-                   divs[j].style.display="none";
-               }
-           //给当前悬浮元素添加属性
-            //这个地方不能用this.id了，因为this指向了window这个对象了,
-                titles[that.id].className="select";
-                divs[that.id].style.display="block";},500);
-            }
-         }
-     }
+<script src="./js/jquery.js"></script>
+<script>
+	$('#tabs1 a').click(function(e) {
+					e.preventDefault();
+					$('#tabs1 li').removeClass("current");
+					$(this).parent().addClass("current");
+					$(".tabresult div").removeClass("show");
+					$('#' + $(this).attr('title')).addClass('show');
+					$('#tabs1 .current.noborder a').css('border-left','none')
+
+			});
+
+
 </script>
