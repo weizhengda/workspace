@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>企业工商数据</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/person.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="top">
+            <div class="topL img2">
+                <img src="./img/enterprise.png" alt="">
+            </div>
+            <div class="topR">
+                <div class="line1"><b>企业工商数据</b><em>支持HTTPS</em></div>
+                <div class="line2">根据企业名称或营业执照查询企业基本工商信息</div>
+                <div class="line3">
+                    <div class="line3L">
+                        <p>数据ID：<span>205</span></p>
+                        <p>接口状态：<em>正常</em></p>
+                        <p>连接应用数：1651</p>
+                    </div>
+                    <div class="line3R">
+                        <p>免费</p>
+                    </div>
+                </div>
+                <div class="line4">
+                    <a href="">申请数据</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab1">
+            <ul id="tabs1">
+                <li class="current noborder"><a href="#" title="tab10" style='border-left:none;padding:0 10px'>API</a>
+                    <li><a href="#" title="tab11">请求参数</a>
+                        <li><a href="#" title="tab12">返回参数</a>
+                            <li><a href="#" title="tab13">示例</a>
+            </ul>
+            <div class="tabresult">
+                <div id="tab10" class="item show">
+                    <div class="maintab">
+                        <ol class="tabtitle">
+                            <li class="tabhover"><span></span><a href="#">1、企业工商数据查询</a></li>
+                            <li class="taba"><span></span><a href="#">2、格式测试接口</a></li>
+                        </ol>
+                        <div class="tabcontent">
+                            <p> 接口地址：http://apis.juhe.cn/idcard/index</p>
+                            <p>支持格式：json/xml</p>
+                            <p>请求方式：get</p>
+                            <p>请求示例：http://apis.juhe.cn/idcard/index?key=您申请的KEY&card-</p>
+                            <p>no=330326198903081211</p>
+                            <p>接口备注:根据企业名称或营业执照查询企业基本工商信息</p></p>
+                        </div>
+                        <div class="tabcontent" style="DISPLAY: none">
+                            <p> 接口地址：http://apis.juhe.cn/idcard/index</p>
+                            <p>支持格式：json/xml</p>
+                            <p>请求方式：get</p>
+                            <p>请求示例：http://apis.juhe.cn/idcard/index?key=您申请的KEY&card-</p>
+                            <p>no=330326198903081211</p>
+                            <p>接口备注:根据企业名称或营业执照查询企业基本工商信息</p></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab11" class="item">
+                    <p>请求参数说明</p>
+                    <table>
+                        <tr>
+                            <th>名称</th>
+                            <th>必填</th>
+                            <th>类型</th>
+                            <th>说明</th>
+                        </tr>
+                        <tr>
+                            <td>key</td>
+                            <td>string</td>
+                            <td>是</td>
+                            <td>您申请的key</td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>string</td>
+                            <td>是</td>
+                            <td>企业名称或营业执照标号、名称需要uft8Urlencode</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="tab12" class="item">
+                    <p>返回参数说明</p>
+                    <table>
+                        <tr>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>说明</th>
+                        </tr>
+                        <tr>
+                            <td>enterpriseName</td>
+                            <td>string</td>
+                            <td>企业名称</td>
+                        </tr>
+                        <tr>
+                            <td>frName</td>
+                            <td>string</td>
+                            <td>法人姓名</td>
+                        </tr>
+                        <tr>
+                            <td>regNo</td>
+                            <td>string</td>
+                            <td>工商注册号</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="tab13" class="item">
+                    <p>返回结果示例</p>
+                    <pre class="pre2">
+{
+	"reason":"查询成功",
+	"result":{
+		"enterpriseName":"苏州新科兰德科技有限公司",
+		"frName":"左磊",
+		"regNo":"320512000114943",
+		"creditCode":"9132059455117770X5",
+		"regCap":"3721.1466",
+		"regCapCur":"人民币",
+		"esDate":"2010-02-25",
+		"openFrom":"2010-02-25",
+		"openTo":"2020-02-24",
+		"enterpriseType":"有限责任公司(自然人投资或控股)",
+		"enterpriseStatus":"在营（开业）",
+		"cancelDate":"",
+		"revokeDate":"",
+		"address":"苏州工业园区启月街288号紫金东方大厦307室",
+		"abuItem":"",
+		"cbuItem":"",
+		"operateScope":"数据技术开发；计算机软硬件开发；计算机技术服务；网络技术服务；网络信息服务；省内第二类增值电信业务中的因特网信息服务业务（因特网信息服务不含新闻、出版、教育、医疗保健、药品和医疗器械、互联网电子公告服务等内容）；网络技术转让、技术推广；会展服务；展览展示服务；设计、制作、代理、发布广告；销售IC卡；电子商务技术咨询；销售日用百货、汽车用品。（依法须经批准的项目，经相关部门批准后方可开展经营活动）",
+		"operateScopeAndForm":"数据技术开发；计算机软硬件开发；计算机技术服务；网络技术服务；网络信息服务；省内第二类增值电信业务中的因特网信息服务业务（因特网信息服务不含新闻、出版、教育、医疗保健、药品和医疗器械、互联网电子公告服务等内容）；网络技术转让、技术推广；会展服务；展览展示服务；设计、制作、代理、发布广告；销售IC卡；电子商务技术咨询；销售日用百货、汽车用品。（依法须经批准的项目，经相关部门批准后方可开展经营活动）"
+	},
+	"error_code":0
+}                </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script>
+
+// 主tab切换
+
+	$('#tabs1 a').click(function(e) {
+					e.preventDefault();
+					$('#tabs1 li').removeClass("current");
+					$(this).parent().addClass("current");
+					$(".tabresult div").removeClass("show");
+					$('#' + $(this).attr('title')).addClass('show');
+					$('#tabs1 .current.noborder a').css({'border-left':'none',"padding":"0 10px"})
+
+			});
+
+// 次tab切换
+
+$(document).ready(function () {
+$('.tabtitle li').click(function () {
+var index = $(this).index();
+$(this).attr('class',"tabhover").siblings('li').attr('class','taba');
+$('.tabcontent').eq(index).show(100).siblings('.tabcontent').hide();
+});
+  
+})
+
+</script>

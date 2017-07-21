@@ -34,6 +34,9 @@ ul li,ol li {
 .top .topL img {
     margin: 40px 30px;
 }
+.top .img2 img{
+   margin: 50px 60px;
+}
 
 .top .topR {
     flex: 1;
@@ -49,7 +52,6 @@ ul li,ol li {
     font-size: 20px;
 }
 
-.top .topR .line1 b {}
 
 .top .topR .line1 span {
     border: 1px solid green;
@@ -247,7 +249,7 @@ ul li,ol li {
 /*请求参数*/
 
 .tabresult>div {
-    padding: 0 30px;
+    padding: 0;
 }
 
 .tabresult>div p {
@@ -299,21 +301,56 @@ ul li,ol li {
 }
 
 .tabresult>div .maintab {
-    width: 100%;
+    width: 700px;
+    height:300px;
+    margin-top:30px;
     display: flex;
 }
 
-.tabresult>div .maintab ul {
-    width: 300px;
+.tabresult>div .maintab ol {
+    width: 150px;
     height: 300px;
-}
-.tabresult>div .maintab ul li{
-  width:150px;
-  height:20px;
-  line-height:20px;
-}
+    padding-right:50px;
+    margin-left:-20px;
+    border-right:1px solid #ccc;
 
+}
+.tabresult>div .maintab ol li{
+  width:160px;
+  height:30px;
+  line-height:30px;  
+  color:#797979;
+  white-space: nowrap;
+}
+.tabresult>div .maintab ol li a{
+  color:#797979;
+  margin-left:5px;
+}
+.tabresult>div .maintab ol li span{
+    width:10px;
+    height:10px;
+    display:inline-block;
+}
+.tabresult>div .maintab ol .tabhover a{
+   color:#0094ff;
+}
+.tabresult>div .maintab ol .tabhover span{
+    width:0;
+    height:0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #0094ff;
+    border-bottom: 5px solid transparent;
+}
 .tabresult>div .maintab .tabcontent {
     flex:1;
     width:100%;
+    padding-left:30px;
+}
+
+.tabresult>div .maintab .tabcontent p{
+    width:100%;
+    height:15px;
+    line-height:15px;
+    font-size:16px;
+    white-space: nowrap;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>身份证查询</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/person.css" rel="stylesheet">
@@ -12,7 +12,7 @@
     <div id="wrap">
         <div class="top">
             <div class="topL">
-                <img src="./img/photo.png" alt="">
+                <img src="./img/person.png" alt="">
             </div>
             <div class="topR">
                 <div class="line1"><b>身份证查询</b><span>免费</span><em>支持HTTPS</em></div>
@@ -44,18 +44,33 @@
                 <div id="tab10" class="item show">
                     <div class="maintab">
                         <ol class="tabtitle">
-                            <li class="tabhover"><a href="#">选择标题1</a></li>
-                            <li class="taba"><a href="#">选择标题2</a></li>
-                            <li class="taba"><a href="#">选择标题3</a></li>
+                            <li class="tabhover"><span></span><a href="#">1、身份证信息查询</a></li>
+                            <li class="taba"><span></span><a href="#">2、身份证泄露查询</a></li>
+                            <li class="taba"><span></span><a href="#">3、身份证挂失查询</a></li>
                         </ol>
                         <div class="tabcontent">
-                            选择内容1
+                            <p> 接口地址：http://apis.juhe.cn/idcard/index</p>
+                            <p>支持格式：json/xml</p>
+                            <p>请求方式：get</p>
+                            <p>请求示例：http://apis.juhe.cn/idcard/index?key=您申请的KEY&card-</p>
+                            <p>no=330326198903081211</p>
+                            <p>调用样例及调试工具：API测试工具</p>
                         </div>
                         <div class="tabcontent" style="DISPLAY: none">
-                            选择内容2
+                            <p> 接口地址：http://apis.juhe.cn/idcard/index</p>
+                            <p>支持格式：json/xml</p>
+                            <p>请求方式：get</p>
+                            <p>请求示例：http://apis.juhe.cn/idcard/index?key=您申请的KEY&card-</p>
+                            <p>no=330326198903081211</p>
+                            <p>调用样例及调试工具：API测试工具</p>
                         </div>
                         <div class="tabcontent" style="DISPLAY: none">
-                            选择内容3
+                            <p> 接口地址：http://apis.juhe.cn/idcard/index</p>
+                            <p>支持格式：json/xml</p>
+                            <p>请求方式：get</p>
+                            <p>请求示例：http://apis.juhe.cn/idcard/index?key=您申请的KEY&card-</p>
+                            <p>no=330326198903081211</p>
+                            <p>调用样例及调试工具：API测试工具</p>
                         </div>
                     </div>
                 </div>
@@ -63,7 +78,7 @@
                     <p>请求参数说明</p>
                     <table>
                         <tr>
-                            <th>人称</th>
+                            <th>名称</th>
                             <th>必填</th>
                             <th>类型</th>
                             <th>说明</th>
@@ -145,16 +160,15 @@
                     </pre>
                     <p>xml返回示例</p>
                     <xmp>
-                        <root>
-                            <resultcode>200</resultcode>
-                            <reason>成功的返回</reason>
-                            <result>
-                                <area>浙江省温州市平阳县</area>
-                                <sex>男</sex>
-                                <birthday>1989年03月08日</birthday>
-                            </result>
-                        </root>
-
+<root>
+<resultcode>200</resultcode>
+<reason>成功的返回</reason>
+<result>
+<area>浙江省温州市平阳县</area>
+<sex>男</sex>
+<birthday>1989年03月08日</birthday>
+ </result>
+</root>
                     </xmp>
                 </div>
             </div>

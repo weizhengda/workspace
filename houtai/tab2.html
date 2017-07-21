@@ -15,9 +15,13 @@
             width:300px;
             height:300px;
         }
+        .maintab ul .tabhover a{
+            color:#0094ff;
+        }
         .maintab .tabcontent{
             flex:1;
         }
+
     </style>
 </head>
 
@@ -57,11 +61,11 @@ var index = $(this).index();
 $(this).attr('class',"tabhover").siblings('li').attr('class','taba');
 $('.tabcontent').eq(index).show(100).siblings('.tabcontent').hide();
 });
-  var t = 0;
-  var timer = setInterval(function(){
-    if( t == $('.tabtitle li').length ) t = 0;
-    $('.tabtitle li:eq('+t+')').click();
-    t++;
-  }, 700)
+//   var t = 0;
+//   var timer = setInterval(function(){
+//     if( t == $('.tabtitle li').length ) t = 0;
+//     $('.tabtitle li:eq('+t+')').click();
+//     t++;
+//   }, 700)
 })
 </script>
