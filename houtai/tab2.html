@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .maintab{
+            width:100%;
+            display:flex;
+        }
+        .maintab ul{
+            width:300px;
+            height:300px;
+        }
+        .maintab .tabcontent{
+            flex:1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maintab">
+        <ul class="tabtitle">
+            <li class="tabhover"><a href="#">选择标题1</a></li>
+            <li class="taba"><a href="#">选择标题2</a></li>
+            <li class="taba"><a href="#">选择标题3</a></li>
+            <li class="taba"><a href="#">选择标题4</a></li>
+            <li class="taba"><a href="#">选择标题5</a></li>
+        </ul>
+        <div class="tabcontent">
+            选择内容1
+        </div>
+        <div class="tabcontent" style="DISPLAY: none">
+            选择内容2
+        </div>
+        <div class="tabcontent" style="DISPLAY: none">
+            选择内容3
+        </div>
+        <div class="tabcontent" style="DISPLAY: none">
+            选择内容4
+        </div>
+        <div class="tabcontent" style="DISPLAY: none">
+            选择内容5
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script language=javascript type=text/javascript>
+$(document).ready(function () {
+$('.tabtitle li').click(function () {
+var index = $(this).index();
+$(this).attr('class',"tabhover").siblings('li').attr('class','taba');
+$('.tabcontent').eq(index).show(100).siblings('.tabcontent').hide();
+});
+  var t = 0;
+  var timer = setInterval(function(){
+    if( t == $('.tabtitle li').length ) t = 0;
+    $('.tabtitle li:eq('+t+')').click();
+    t++;
+  }, 700)
+})
+</script>

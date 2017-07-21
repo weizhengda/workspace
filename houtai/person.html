@@ -34,34 +34,140 @@
             </div>
         </div>
         <div class="tab1">
-				<ul id="tabs1">	
-					<li class="current noborder"><a href="#" title="tab10" style='border-left:none;padding:0 10px'>API</a>
-					<li><a href="#" title="tab11">请求参数</a>
-					<li><a href="#" title="tab12">返回参数</a>
-                    <li><a href="#" title="tab13">示例</a>								
-				</ul>
-				<div class="tabresult">
-				<div id="tab10" class="item show">
-				 	 
-				 
-				  </div>
-				  <div id="tab11" class="item">
-				 	2
-				  </div>
-				  
-				  <div id="tab12" class="item">
-				 	3
-				  </div>
-                  <div id="tab12" class="item">
-				 	4
-				  </div>
-				  </div>
-				  </div>
+            <ul id="tabs1">
+                <li class="current noborder"><a href="#" title="tab10" style='border-left:none;padding:0 10px'>API</a>
+                    <li><a href="#" title="tab11">请求参数</a>
+                        <li><a href="#" title="tab12">返回参数</a>
+                            <li><a href="#" title="tab13">示例</a>
+            </ul>
+            <div class="tabresult">
+                <div id="tab10" class="item show">
+                    <div class="maintab">
+                        <ol class="tabtitle">
+                            <li class="tabhover"><a href="#">选择标题1</a></li>
+                            <li class="taba"><a href="#">选择标题2</a></li>
+                            <li class="taba"><a href="#">选择标题3</a></li>
+                        </ol>
+                        <div class="tabcontent">
+                            选择内容1
+                        </div>
+                        <div class="tabcontent" style="DISPLAY: none">
+                            选择内容2
+                        </div>
+                        <div class="tabcontent" style="DISPLAY: none">
+                            选择内容3
+                        </div>
+                    </div>
+                </div>
+                <div id="tab11" class="item">
+                    <p>请求参数说明</p>
+                    <table>
+                        <tr>
+                            <th>人称</th>
+                            <th>必填</th>
+                            <th>类型</th>
+                            <th>说明</th>
+                        </tr>
+                        <tr>
+                            <td>cardno</td>
+                            <td>string</td>
+                            <td>Y</td>
+                            <td>身份证号码</td>
+                        </tr>
+                        <tr>
+                            <td>dtype</td>
+                            <td>string</td>
+                            <td>Y</td>
+                            <td>返回数据格式:json<br/> 或xml,默认json
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>key</td>
+                            <td>string</td>
+                            <td>Y</td>
+                            <td>你申请的key</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="tab12" class="item">
+                    <p>返回参数说明</p>
+                    <table>
+                        <tr>
+                            <th>名称</th>
+                            <th>类型</th>
+                            <th>说明</th>
+                        </tr>
+                        <tr>
+                            <td>error_code</td>
+                            <td>int</td>
+                            <td>返回码</td>
+                        </tr>
+                        <tr>
+                            <td>reason</td>
+                            <td>string</td>
+                            <td>返回说明</td>
+                        </tr>
+                        <tr>
+                            <td>data</td>
+                            <td>——</td>
+                            <td>返回结果集</td>
+                        </tr>
+                        <tr>
+                            <td>area</td>
+                            <td>string</td>
+                            <td>地区</td>
+                        </tr>
+                        <tr>
+                            <td>sex</td>
+                            <td>string</td>
+                            <td>性别</td>
+                        </tr>
+                        <tr>
+                            <td>birthday</td>
+                            <td>string</td>
+                            <td>出生日期</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="tab13" class="item">
+                    <p>返回结果示例</p>
+                    <pre>
+{
+"resultcode":"200",
+"reason":"成功的返回",
+"result":{
+	"area":"浙江省温州市平阳县",
+	"sex":"男",
+	"birthday":"1989年03月08日"
+}
+}
+                    </pre>
+                    <p>xml返回示例</p>
+                    <xmp>
+                        <root>
+                            <resultcode>200</resultcode>
+                            <reason>成功的返回</reason>
+                            <result>
+                                <area>浙江省温州市平阳县</area>
+                                <sex>男</sex>
+                                <birthday>1989年03月08日</birthday>
+                            </result>
+                        </root>
+
+                    </xmp>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
 <script src="./js/jquery.js"></script>
 <script>
+
+// 主tab切换
+
 	$('#tabs1 a').click(function(e) {
 					e.preventDefault();
 					$('#tabs1 li').removeClass("current");
@@ -72,5 +178,15 @@
 
 			});
 
+// 次tab切换
+
+$(document).ready(function () {
+$('.tabtitle li').click(function () {
+var index = $(this).index();
+$(this).attr('class',"tabhover").siblings('li').attr('class','taba');
+$('.tabcontent').eq(index).show(100).siblings('.tabcontent').hide();
+});
+  
+})
 
 </script>
