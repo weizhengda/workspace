@@ -22,14 +22,14 @@
 			    width:200px;
 				margin:2px auto;
 				font-size:12px; 
-				font-family: "微软雅黑";
+				font-family: "黑体";
 				font-weight:bold;
 				border: 2px;
 				border-style: solid;
 				border-color: #dadada;
 				padding: 0px 5px;
 				position: relative;
-				color:#333;
+				color:#000;
 			}
 			.jiao{
 				width: 12px;
