@@ -1,0 +1,49 @@
+<html>
+<body>
+<button onclick="run()" >插入</button><br/><br/>
+<div contenteditable="true" id="chatBox_editArea" onclick="getPos();" onkeyup="getPos();" style="width:200px;height:200px;border:1px solid black;"></div>
+</body>
+</html>
+
+<script>
+
+var rng, type;
+function getPos()
+{
+	if (document.selection)
+	{
+		rng = document.selection.createRange();
+		type = 0;
+	}
+	// Firefox support only for div   
+	else if (window.getSelection)
+	{
+		rng = window.getSelection().getRangeAt(0);
+		type = 1;
+	}
+}
+function run(){
+	var src = 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2910945905,2765586636&amp;fm=117&amp;gp=0.jpg';
+        var html = '<img src="' + src + '" style="width:30px" alt=""/>';
+        if (rng != null)
+        {
+            if (type == 0)
+            {
+                rng.pasteHTML(html);
+            }
+            else if (type == 1)
+            {
+                var fragment = rng.createContextualFragment(html);
+                var oLastNode = fragment.lastChild; //获得DocumentFragment的末尾位置 
+                rng.insertNode(fragment);
+                rng.setEndAfter(oLastNode); //设置末尾位置   
+                rng.collapse(false); //合并范围至末尾 
+            }
+            rng = null;
+        }
+        else
+        {
+            document.getElementById("chatBox_editArea").innerHTML += html;
+        }
+}
+</script>

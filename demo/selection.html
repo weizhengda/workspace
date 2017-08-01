@@ -1,0 +1,17 @@
+<form id='form_test'>
+<input type='text' />
+<input type='text' />
+<input type='text' />
+<input type='text' />
+<input type='text' />
+<input type='text' />
+<input type='text' />
+</form>
+<script>
+$(document).ready(function(){
+/*文本框获得焦点时，自动选中内容*/
+$("# form_test input[type='text']").bind('focus',function(){
+$(this).select();
+})
+})
+</script>

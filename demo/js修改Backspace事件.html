@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <div contenteditable="true" id="txtEditerBox">
+        <span class="c-textarea">{12312}</span>456
+    </div>
+</body>
+</html>
+<script>
+    $(document).on("keydown","#txtEditerBox",function (e) {
+    if(e.keyCode === 8){
+        var selection = window.getSelection();
+        var range = selection.getRangeAt(0);
+        // 当 光标 集合到 一点 时， range的文档内容为空，需要 重新指定  选择前一个节点的最后一个文本为删除的range文档
+        if(range.collapsed){
+            if(range.startOffset===0){
+                //range.setStart(range.startContainer.nextElementSibling);
+                //range.setStartOffset(range.startContainer.length);
+                range.start = range.startContainer.previousElementSibling;
+                var id = range.start ? range.start.id:"";
+                $(".c-textarea").find("#"+id).remove();
+                //range.startOffset = range.startContainer.length;
+            }else{
+                range.setStartOffset(range.startOffset  - 1);
+                range.startOffset = range.startOffset  - 1;
+            }
+        }
+         console.log(range);
+        // 删除当前 Range 对象表示的文档区域。
+         range.deleteContents();
+         e.preventDefault();
+         e.stopPropagation();
+    }
+});
+</script>

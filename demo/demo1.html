@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .name{
+        color:#000;
+    }
+</style>
+<body>
+   <div class="name">您好，{AWWER}123</div>
+   <div class="box">你好，123</div>
+</body>
+
+</html>
+<script src="./js/jquery.js"></script>
+<script>
+
+    var reg = new RegExp("/^[A-Za-z]+$/");
+    var str = $(".name").text();
+    var newstr = str.replace(reg, "<font color=red>$1</font>");  
+    
+       
+</script>

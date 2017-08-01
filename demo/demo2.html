@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <style>
+        pre{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+   <div contenteditable="true" id="test"></div>
+   <button id="btn">点我</button>
+</body>
+
+</html>
+
+<script>
+    var ele = document.getElementById('test');
+      var btn = document.getElementById('btn');
+
+      ele.addEventListener('keyup', function ($event) {
+        console.log($event);
+      });
+
+      btn.addEventListener('click', function ($event) {
+        ele.focus();
+        pasteHtmlAtCaret('<b>testsss</b>');
+      });
+
+      function pasteHtmlAtCaret(html) {
+        var sel, range;
+        if (window.getSelection) {
+            // IE9 and non-IE
+            sel = window.getSelection();
+            if (sel.getRangeAt && sel.rangeCount) {
+                range = sel.getRangeAt(0);
+                range.deleteContents();
+
+                // Range.createContextualFragment() would be useful here but is
+                // non-standard and not supported in all browsers (IE9, for one)
+                var el = document.createElement("div");
+                el.innerHTML = html;
+                var frag = document.createDocumentFragment(), node, lastNode;
+                while ( (node = el.firstChild) ) {
+                    lastNode = frag.appendChild(node);
+                }
+                range.insertNode(frag);
+                
+                // Preserve the selection
+                if (lastNode) {
+                    range = range.cloneRange();
+                    range.setStartAfter(lastNode);
+                    range.collapse(true);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+            }
+        } else if (document.selection && document.selection.type != "Control") {
+            // IE < 9
+            document.selection.createRange().pasteHTML(html);
+        }
+      }
+</script>
